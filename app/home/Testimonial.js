@@ -28,19 +28,13 @@ const Testimonial = () => {
                 href="https://www.linkedin.com/in/-rishi-sharma/"
                 class="inline-flex items-center"
               >
-                {/* <img
-                  alt="testimonial"
-                  src="https://media.licdn.com/dms/image/C4D03AQFrrKIzEqy6GA/profile-displayphoto-shrink_400_400/0/1656441438045?e=1688601600&v=beta&t=94uhmNqX-A5HTQPCNWdcGtFhoii_QXBjm1SViGtW3GM"
-                  class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
-                /> */}
-
                 <span class="flex-grow flex flex-col pl-4">
                   <span class="title-font font-medium text-gray-900">
                     Vaibhav Dhar
                   </span>
                   <span class="text-gray-500 text-sm">
                     Data Science Analyst Intern -TheMathCompany| Ex-Consulting
-                    Intern -HighRadius | HPAIR'21 | SRMIST
+                    Intern -HighRadius | HPAIR 21 | SRMIST
                   </span>
                 </span>
               </Link>
