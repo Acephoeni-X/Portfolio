@@ -5,7 +5,7 @@ import Link from "next/link";
 const getRepos = async () => {
   let data = await (
     await fetch(
-      `portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/repos`,
+      `https://portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/repos`,
       { next: { revalidate: 10 } }
     )
   ).json();

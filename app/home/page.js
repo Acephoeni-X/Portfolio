@@ -10,7 +10,7 @@ import Testimonial from "./Testimonial";
 async function getFollowers() {
   let data = await (
     await fetch(
-      `portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/followers`,
+      `https://portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/followers`,
       {
         next: { revalidate: 10 },
       }
@@ -22,7 +22,7 @@ async function getFollowers() {
 async function getRepos() {
   let data = await (
     await fetch(
-      `portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/repos`,
+      `https://portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/repos`,
       {
         next: { revalidate: 10 },
       }
@@ -34,7 +34,7 @@ async function getRepos() {
 async function getFollowings() {
   let data = await (
     await fetch(
-      `portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/followings`,
+      `https://portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/followings`,
       {
         next: { revalidate: 10 },
       }
