@@ -1,4 +1,5 @@
 import React from "react";
+import Hobby from "./Hobby";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
 
@@ -166,6 +167,7 @@ const page = () => {
         </section>
       </main>
       <Projects />
+      <Hobby />
     </div>
   );
 };
