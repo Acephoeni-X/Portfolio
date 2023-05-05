@@ -9,27 +9,36 @@ import Testimonial from "./Testimonial";
 
 async function getFollowers() {
   let data = await (
-    await fetch(`/api/followers`, {
-      next: { revalidate: 10 },
-    })
+    await fetch(
+      `portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/followers`,
+      {
+        next: { revalidate: 10 },
+      }
+    )
   ).json();
   return Object.keys(data).length;
 }
 
 async function getRepos() {
   let data = await (
-    await fetch(`/api/repos`, {
-      next: { revalidate: 10 },
-    })
+    await fetch(
+      `portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/repos`,
+      {
+        next: { revalidate: 10 },
+      }
+    )
   ).json();
   return Object.keys(data).length;
 }
 
 async function getFollowings() {
   let data = await (
-    await fetch(`/api/followings`, {
-      next: { revalidate: 10 },
-    })
+    await fetch(
+      `portfolio-rc6y-3ukoqjzn6-rishi-sharma2002.vercel.app/api/followings`,
+      {
+        next: { revalidate: 10 },
+      }
+    )
   ).json();
   return Object.keys(data).length;
 }
