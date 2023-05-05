@@ -9,7 +9,7 @@ import Testimonial from "./Testimonial";
 
 async function getFollowers() {
   let data = await (
-    await fetch(`https://portfolio-rc6y.vercel.app/api/followers`, {
+    await fetch(`${process.env.HOST}/api/followers`, {
       next: { revalidate: 10 },
     })
   ).json();
@@ -18,7 +18,7 @@ async function getFollowers() {
 
 async function getRepos() {
   let data = await (
-    await fetch(`https://portfolio-rc6y.vercel.app/api/repos`, {
+    await fetch(`${process.env.HOST}/api/repos`, {
       next: { revalidate: 10 },
     })
   ).json();
@@ -27,7 +27,7 @@ async function getRepos() {
 
 async function getFollowings() {
   let data = await (
-    await fetch(`https://portfolio-rc6y.vercel.app/api/followings`, {
+    await fetch(`${process.env.HOST}/api/followings`, {
       next: { revalidate: 10 },
     })
   ).json();
