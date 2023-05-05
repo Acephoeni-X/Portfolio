@@ -108,7 +108,7 @@ const Navbar = (props) => {
                       : "text-gray-200 hover:text-gray-200") +
                     " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   }
-                  href={`${process.env.NEXT_PUBLIC_LINKEDIN}`}
+                  href={`${process.env.NEXT_PUBLIC_GITHUB}`}
                   replace
                 >
                   <svg
@@ -135,7 +135,7 @@ const Navbar = (props) => {
                       : "text-gray-200 hover:text-gray-200") +
                     " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   }
-                  href={`${process.env.NEXT_PUBLIC_LINKEDIN}`}
+                  href={`${process.env.NEXT_PUBLIC_INSTAGRAM}`}
                   replace
                 >
                   <svg
@@ -166,7 +166,7 @@ const Navbar = (props) => {
                     type="button"
                     style={{ transition: "all .15s ease" }}
                   >
-                    <i className="fas fa-arrow-alt-circle-down"></i> Download
+                    <i className="fas fa-arrow-alt-circle-down"></i> RESUME
                   </button>
                 </Link>
               </li>

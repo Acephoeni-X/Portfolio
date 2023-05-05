@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swipe from "react-easy-swipe";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
@@ -11,7 +11,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
  * @param images - Array of images with src and alt attributes
  * @returns React component
  */
-export default function Carousel({ images }) {
+export default function Carousel({ images, setDescription }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleNextSlide = () => {
@@ -23,6 +23,10 @@ export default function Carousel({ images }) {
     let newSlide = currentSlide === 0 ? images.length - 1 : currentSlide - 1;
     setCurrentSlide(newSlide);
   };
+
+  useEffect(() => {
+    setDescription(currentSlide);
+  }, [currentSlide]);
 
   return (
     <div className="relative">
@@ -38,10 +42,11 @@ export default function Carousel({ images }) {
         >
           {images.map((image, index) => {
             if (index === currentSlide) {
+              // console.log(index);
               return (
                 <Image
                   key={index}
-                  src={image}
+                  src={image.src}
                   layout="fill"
                   objectFit="contain"
                   className="animate-fadeIn"
