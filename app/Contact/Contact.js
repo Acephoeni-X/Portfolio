@@ -7,19 +7,16 @@ const Contact = () => {
   const [isSend, setisSend] = useState(false);
 
   const send = () => {
-    fetch(
-      "https://discord.com/api/webhooks/1104008827965276160/oIkpi4S7lDXGcwFMvWcEJw7fEK2i9jwi2idTANn6bxpaLaL7vPHuU1FeGxZz_6vXFkJo",
-      {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          content: `${email} - ${message}`,
-        }),
-      }
-    );
+    fetch(process.env.NEXT_PUBLIC_DISCORD, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        content: `${email} - ${message}`,
+      }),
+    });
     setisSend(true);
   };
 
