@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const getRepos = async () => {
   let data = await (
-    await fetch(`${process.env.HOST}/api/repos`, { next: { revalidate: 10 } })
+    await fetch(`/api/repos`, { next: { revalidate: 10 } })
   ).json();
   let json_ = [];
   data.map((e) => {
