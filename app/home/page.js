@@ -9,7 +9,7 @@ import Testimonial from "./Testimonial";
 
 async function getFollowers() {
   let data = await (
-    await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/followers`, {
+    await fetch(`http://127.0.0.1:3000/api/followers`, {
       next: { revalidate: 10 },
     })
   ).json();
@@ -18,7 +18,7 @@ async function getFollowers() {
 
 async function getRepos() {
   let data = await (
-    await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/repos`, {
+    await fetch(`http://127.0.0.1:3000/api/repos`, {
       next: { revalidate: 10 },
     })
   ).json();
@@ -27,7 +27,7 @@ async function getRepos() {
 
 async function getFollowings() {
   let data = await (
-    await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/followings`, {
+    await fetch(`http://127.0.0.1:3000/api/followings`, {
       next: { revalidate: 10 },
     })
   ).json();

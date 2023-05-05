@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const getRepos = async () => {
   let data = await (
-    await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/repos`, {
+    await fetch(`http://127.0.0.1:3000/api/repos`, {
       next: { revalidate: 10 },
     })
   ).json();
