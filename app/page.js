@@ -1,12 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import Footer from "./Footer";
-// import Head from "./head";
 import Hobby from "./Hobby";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Testimonial from "./Testimonial";
-import axios from "axios";
 
 async function getFollowers() {
   let data = await (
@@ -23,7 +21,6 @@ async function getFollowers() {
       }
     )
   ).json();
-  // data = data.data;
   return Object.keys(data).length;
 }
 
@@ -72,7 +69,6 @@ const page = async () => {
   let followings = await getFollowings();
   let repos = await getRepos();
 
-  // getFollowers();
   return (
     <div>
       {/* <Head /> */}
@@ -205,7 +201,7 @@ const page = async () => {
         </section>
       </main>
       <Projects />
-      <Hobby />
+      {/* <Hobby /> */}
       <Testimonial />
       <Footer />
     </div>
