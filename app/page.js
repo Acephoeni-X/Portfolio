@@ -201,7 +201,7 @@ const page = async () => {
         </section>
       </main>
       <Projects />
-      {/* <Hobby /> */}
+      <Hobby />
       <Testimonial />
       <Footer />
     </div>
