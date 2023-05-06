@@ -6,30 +6,59 @@ import Hobby from "./Hobby";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Testimonial from "./Testimonial";
+import axios from "axios";
 
 async function getFollowers() {
   let data = await (
-    await fetch(`http://127.0.0.1:3000/api/followers`, {
-      next: { revalidate: 10 },
-    })
+    await fetch(
+      `https://api.github.com/users/UnspecifiedOne/followers`,
+      {
+        next: { revalidate: 10 },
+      },
+      {
+        method: "GET",
+        headers: {
+          Authorization: `${process.env.GITHUB_TOKEN} `,
+        },
+      }
+    )
   ).json();
+  // data = data.data;
   return Object.keys(data).length;
 }
 
 async function getRepos() {
   let data = await (
-    await fetch(`http://127.0.0.1:3000/api/repos`, {
-      next: { revalidate: 10 },
-    })
+    await fetch(
+      `https://api.github.com/users/UnspecifiedOne/repos`,
+      {
+        next: { revalidate: 10 },
+      },
+      {
+        method: "GET",
+        headers: {
+          Authorization: `${process.env.GITHUB_TOKEN} `,
+        },
+      }
+    )
   ).json();
   return Object.keys(data).length;
 }
 
 async function getFollowings() {
   let data = await (
-    await fetch(`http://127.0.0.1:3000/api/followings`, {
-      next: { revalidate: 10 },
-    })
+    await fetch(
+      `https://api.github.com/users/UnspecifiedOne/following`,
+      {
+        next: { revalidate: 10 },
+      },
+      {
+        method: "GET",
+        headers: {
+          Authorization: `${process.env.GITHUB_TOKEN} `,
+        },
+      }
+    )
   ).json();
   return Object.keys(data).length;
 }
@@ -43,7 +72,7 @@ const page = async () => {
   let followings = await getFollowings();
   let repos = await getRepos();
 
-  getFollowers();
+  // getFollowers();
   return (
     <div>
       {/* <Head /> */}

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const getRepos = async () => {
   let data = await (
-    await fetch(`http://127.0.0.1:3000/api/repos`, {
+    await fetch(`https://api.github.com/users/UnspecifiedOne/repos`, {
       next: { revalidate: 10 },
     })
   ).json();
