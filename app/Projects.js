@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const getRepos = async () => {
   let data = await (
-    await fetch(`https://api.github.com/users/UnspecifiedOne/repos`, {
+    await fetch(`${process.env.API_GITHUB}/repos`, {
       next: { revalidate: 10 },
     })
   ).json();

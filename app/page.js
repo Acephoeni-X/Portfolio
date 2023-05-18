@@ -9,7 +9,7 @@ import Testimonial from "./Testimonial";
 async function getFollowers() {
   let data = await (
     await fetch(
-      `https://api.github.com/users/UnspecifiedOne/followers`,
+      `${process.env.API_GITHUB}/followers`,
       {
         next: { revalidate: 10 },
       },
@@ -27,7 +27,7 @@ async function getFollowers() {
 async function getRepos() {
   let data = await (
     await fetch(
-      `https://api.github.com/users/UnspecifiedOne/repos`,
+      `${process.env.API_GITHUB}/repos`,
       {
         next: { revalidate: 10 },
       },
@@ -45,7 +45,7 @@ async function getRepos() {
 async function getFollowings() {
   let data = await (
     await fetch(
-      `https://api.github.com/users/UnspecifiedOne/following`,
+      `${process.env.API_GITHUB}/following`,
       {
         next: { revalidate: 10 },
       },
