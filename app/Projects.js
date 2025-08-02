@@ -5,11 +5,14 @@ import Link from "next/link";
 const getRepos = async () => {
   let data = await (
     await fetch(`${process.env.API_GITHUB}/repos`, {
-      next: { revalidate: 10 },
+      cache: 'no-store',
     })
   ).json();
   let json_ = [];
-  data.map((e) => {
+  if (data.message.includes("API rate limit exceeded")){
+    return []
+  }
+  data?.map((e) => {
     json_.push({
       name: e.name,
       description: e.description,
@@ -82,7 +85,7 @@ const Projects = async () => {
                 <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400 text-wrap">
                   {e.description}
                 </p>
-                <ul className="flex space-x-4 sm:mt-0">
+                {/* <ul className="flex space-x-4 sm:mt-0">
                   <li>
                     <a
                       href="#"
@@ -93,10 +96,9 @@ const Projects = async () => {
                       ) : (
                         e.language
                       )}
-                      {/* // {lang} */}
                     </a>
                   </li>
-                </ul>
+                </ul> */}
               </div>
             </div>
           ))}

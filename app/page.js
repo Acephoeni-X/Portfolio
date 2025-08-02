@@ -5,6 +5,7 @@ import Hobby from "./Hobby";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Testimonial from "./Testimonial";
+import Image from 'next/image'
 
 async function getFollowers() {
   let data = await (
@@ -112,12 +113,13 @@ const page = async () => {
               <div className="px-6">
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                    <div className="relative">
-                      <img
-                        alt="..."
+                    <div className="relative w-[150px] h-[150px] mx-auto -mt-20">
+                      <Image
                         src="https://avatars.githubusercontent.com/u/63443330?v=4"
-                        className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
-                        style={{ maxWidth: "150px" }}
+                        alt="Rishi Sharma"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-full shadow-xl"
                       />
                     </div>
                   </div>
@@ -169,7 +171,7 @@ const page = async () => {
                   </div>
                   <div className="mb-2 text-gray-700 mt-10">
                     <i className="fas fa-briefcase mr-2 text-lg text-gray-500"></i>
-                    BA3 Engineer - Barclays Global Service Center Private
+                    BA4 Engineer - Barclays Global Service Center Private
                     Limited
                   </div>
                   <div className="mb-2 text-gray-700">
