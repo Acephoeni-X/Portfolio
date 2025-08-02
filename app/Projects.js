@@ -5,15 +5,20 @@ import Link from "next/link";
 const getRepos = async () => {
   const token = process.env.GITHUB_TOKEN;
 
-let res = await fetch("https://api.github.com/users/Acephoeni-X/repos", {
-  method: "GET",
-  headers: {
-    Authorization: `token ${token}`,
-    Accept: "application/vnd.github.v3+json",
-  },
-  cache: "no-store",
-});
-
+  let res = await (
+      await fetch(
+        `${process.env.API_GITHUB}/repos`,
+        {
+          next: { revalidate: 10 },
+        },
+        {
+          method: "GET",
+          headers: {
+            Authorization: `${process.env.GITHUB_TOKEN} `,
+          },
+        }
+      )
+    ).json();
   const data = await res.json();
 
   if (!res.ok) {
