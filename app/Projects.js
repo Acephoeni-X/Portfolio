@@ -3,31 +3,47 @@ import React from "react";
 import Link from "next/link";
 
 const getRepos = async () => {
-  let data = await (
-    await fetch(`${process.env.API_GITHUB}/repos`, {
-      cache: 'no-store',
-    })
-  ).json();
-  let json_ = [];
-  if (data.message.includes("API rate limit exceeded")){
-    return []
-  }
-  data?.map((e) => {
-    json_.push({
-      name: e.name,
-      description: e.description,
-      htmlUrl: e.html_url,
-      contributors: e.contributors_url,
-      created: e.created_at,
-      updated: e.updated_at,
-      clone_ssh: e.ssh_url,
-      clone_http: e.clone_url,
-      size: e.size,
-      language: e.language,
-    });
+  const token = process.env.GITHUB_TOKEN;
+
+  let res = await fetch("https://api.github.com/users/Acephoeni-X/repos", {
+    headers: {
+      Authorization: `token ${token}`,
+    },
+    cache: "no-store",
   });
-  return json_;
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    console.error("GitHub API Error:", data);
+
+    // Optional: handle known rate-limit message
+    if (data?.message?.includes("API rate limit")) {
+      throw new Error("GitHub API rate limit exceeded.");
+    }
+
+    return [];
+  }
+
+  if (!Array.isArray(data)) {
+    console.error("Unexpected data from GitHub API:", data);
+    return [];
+  }
+
+  return data.map((e) => ({
+    name: e.name,
+    description: e.description,
+    htmlUrl: e.html_url,
+    contributors: e.contributors_url,
+    created: e.created_at,
+    updated: e.updated_at,
+    clone_ssh: e.ssh_url,
+    clone_http: e.clone_url,
+    size: e.size,
+    language: e.language,
+  }));
 };
+
 
 let lang = {
   Python:
