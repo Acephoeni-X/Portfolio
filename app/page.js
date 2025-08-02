@@ -171,7 +171,7 @@ const page = async () => {
                   </div>
                   <div className="mb-2 text-gray-700 mt-10">
                     <i className="fas fa-briefcase mr-2 text-lg text-gray-500"></i>
-                    BA4 Engineer - Barclays Global Service Center Private
+                    BA4 Software Developer - Barclays Global Service Center Private
                     Limited
                   </div>
                   <div className="mb-2 text-gray-700">
