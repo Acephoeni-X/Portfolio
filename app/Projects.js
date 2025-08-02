@@ -16,12 +16,6 @@ const getRepos = async () => {
 
   if (!res.ok) {
     console.error("GitHub API Error:", data);
-
-    // Optional: handle known rate-limit message
-    if (data?.message?.includes("API rate limit")) {
-      throw new Error("GitHub API rate limit exceeded.");
-    }
-
     return [];
   }
 
