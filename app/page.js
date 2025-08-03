@@ -64,10 +64,10 @@ async function getFollowings() {
 
 export const metadata = {
   title: "Rishi Sharma",
-  description: "Portfolio website of Rishi Sharma",
+  description: "Sometimes it is the people no one can imagine anything of who do the things no one can imagine.",
   openGraph: {
     title: "Rishi Sharma",
-    description: "Portfolio website of Rishi Sharma",
+    description: "Sometimes it is the people no one can imagine anything of who do the things no one can imagine.",
     images: [
       {
         url: "https://avatars.githubusercontent.com/u/63443330?v=4",
@@ -80,7 +80,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rishi Sharma",
-    description: "Portfolio website of Rishi Sharma",
+    description: "Sometimes it is the people no one can imagine anything of who do the things no one can imagine.",
     images: ["https://avatars.githubusercontent.com/u/63443330?v=4"],
   },
 };
