@@ -17,6 +17,7 @@ const getRepos = async () => {
         },
       }
     );
+  const data = await res.json();
   if (!res.ok) {
     console.error("GitHub API Error:", data);
     return [];
