@@ -1,11 +1,10 @@
-// "use client";
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from 'next/image'
+import { repos } from "@/mocks/repos";
 
 const getRepos = async () => {
-  const token = process.env.GITHUB_TOKEN;
-
   let res =
     await fetch(
       `${process.env.API_GITHUB}/repos`,
@@ -19,7 +18,6 @@ const getRepos = async () => {
         },
       }
     );
-  let data = await res.json()
   if (!res.ok) {
     console.error("GitHub API Error:", data);
     return [];
@@ -69,8 +67,12 @@ let lang = {
 // };
 
 const getDate = (x) => {
-  var d = new Date(x);
-  return `${d.getUTCDay()}:${d.getUTCMonth()}:${d.getUTCFullYear()}`;
+  const d = new Date(x);
+  const day = d.getUTCDate();
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const month = monthNames[d.getUTCMonth()];
+  const year = d.getUTCFullYear();
+  return `${day} ${month} ${year}`;
 };
 
 const Projects = async () => {
