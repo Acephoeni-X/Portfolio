@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Testimonial from "./Testimonial";
 import Image from 'next/image'
+import Experience from "./Experience";
 
 async function getFollowers() {
   let data = await (
@@ -202,8 +203,9 @@ const page = async () => {
           </div>
         </section>
       </main>
+      <Experience />
       <Projects />
-      <Hobby />
+      {/* <Hobby /> */}
       <Testimonial />
       <Footer />
     </div>
