@@ -65,8 +65,26 @@ async function getFollowings() {
 export const metadata = {
   title: "Rishi Sharma",
   description: "Portfolio website of Rishi Sharma",
-  image: "https://avatars.githubusercontent.com/u/63443330?v=4"
+  openGraph: {
+    title: "Rishi Sharma",
+    description: "Portfolio website of Rishi Sharma",
+    images: [
+      {
+        url: "https://avatars.githubusercontent.com/u/63443330?v=4",
+        width: 800,
+        height: 600,
+        alt: "Rishi Sharma Avatar",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rishi Sharma",
+    description: "Portfolio website of Rishi Sharma",
+    images: ["https://avatars.githubusercontent.com/u/63443330?v=4"],
+  },
 };
+
 
 const page = async () => {
   let followers = await getFollowers();
