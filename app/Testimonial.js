@@ -4,7 +4,7 @@ import React from "react";
 const Testimonial = () => {
   return (
     <section className="text-gray-600 body-font dark:bg-gray-900">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-14 pt-4 mx-auto">
         <h1 className="text-3xl font-medium title-font text-gray-200 mb-12 text-center">
           Testimonial
         </h1>
