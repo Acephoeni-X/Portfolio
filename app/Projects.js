@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import Image from 'next/image'
@@ -75,6 +74,24 @@ const getDate = (x) => {
   return `${day} ${month} ${year}`;
 };
 
+const getRepoName = (x) => {
+  let repo_name = String(x);
+
+  repo_name = repo_name.replace(/[-_]/g, " ");
+
+  repo_name = repo_name
+    .split(" ")
+    .map((word) =>
+      word.length > 0
+        ? word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        : ""
+    )
+    .join(" ");
+
+  return repo_name;
+};
+
+
 const Projects = async () => {
   let data = await getRepos();
   return (
@@ -96,7 +113,7 @@ const Projects = async () => {
             >
               <div className="p-5">
                 <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  <Link href={`${e.htmlUrl}`}>{e.name}</Link>
+                  <Link href={`${e.htmlUrl}`}>{getRepoName(e.name)}</Link>
                 </h3>
                 <span className="text-gray-500 dark:text-gray-400">
                   Created: {getDate(e.created)}
