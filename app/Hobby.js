@@ -30,9 +30,10 @@ const Hobby = () => {
             {desc}
           </h2>
         </div>
-        <div>
+        {/* images with family are here */}
+        {/* <div>
           <Carousel images={images} setDescription={setDescription} />
-        </div>
+        </div> */}
       </div>
     </section>
   );
