@@ -63,7 +63,9 @@ async function getFollowings() {
 }
 
 export const metadata = {
-  title: "RSharma",
+  title: "Rishi Sharma",
+  description: "Portfolio website of Rishi Sharma",
+  image: "https://avatars.githubusercontent.com/u/63443330?v=4"
 };
 
 const page = async () => {
